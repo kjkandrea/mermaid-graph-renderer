@@ -4,10 +4,24 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://unpkg.com/mermaid@7.1.0/dist/mermaid.min.js"></script>
     <title>Document</title>
 </head>
 <body>
     <h1>Mermaid Graph Renderer</h1>
+    <div class="mermaid">
+        sequenceDiagram
+        participant Alice
+        participant Bob
+        Alice->>John: Hello John, how are you?
+        loop Healthcheck
+        John->>John: Fight against hypochondria
+        end
+        Note right of John: Rational thoughts <br/>prevail...
+        John-->>Alice: Great!
+        John->>Bob: How about you?
+        Bob-->>John: Jolly good!
+    </div>
     <div id="mermaid"></div>
     <script src="./app.js"></script>
 </body>
