@@ -13,7 +13,6 @@ const main = {
         content += `\n${vertex1}--${edges[vertex1][vertex2]}-->${vertex2}`
       }
     }
-
     return content
   },
   render(graph) {
