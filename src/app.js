@@ -1,6 +1,8 @@
 import { render } from './api/mermaidRenderer.js'
 
-document.addEventListener('DOMContentLoaded', () => {
+const main = () => {
   const mermaidElement = document.getElementById('mermaid')
   render(mermaidElement)
-})
+}
+
+document.addEventListener('DOMContentLoaded', () => main())
