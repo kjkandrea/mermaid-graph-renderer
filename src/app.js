@@ -7,7 +7,13 @@ const main = {
     this.render(graph)
   },
   madeGraph() {
-    console.log(keyPadGraph.edges)
+    const edges = keyPadGraph.edges;
+    for (const vertex1 in edges) {
+      for (const vertex2 in edges[vertex1]) {
+        console.log('vertex2 : %s', vertex2)
+      }
+    }
+
 
     return 'flowchart\n1-- 1 -->2\n2-- 1 -->1\n2-- 1 -->3\n3 -- 1 -->2'
   },
