@@ -1,11 +1,14 @@
 import { render } from './api/mermaidRenderer'
+import keyPadGraph from './graphs/keyPadGraph'
 
 const main = {
   init() {
-    const graph = this.maidGraph()
+    const graph = this.madeGraph()
     this.render(graph)
   },
-  maidGraph() {
+  madeGraph() {
+    console.log(keyPadGraph.edges)
+
     return 'flowchart\n1-- 1 ---2\n2-- 1 ---3\n'
   },
   render(graph) {
