@@ -1,5 +1,6 @@
-export const render = element => {
-  const mermaidElement = document.createElement('h2')
-  mermaidElement.innerText = '응애 나 머메이드 🧜‍'
-  element.append(mermaidElement)
+import mermaid from 'mermaid'
+
+export const render = (element, content) => {
+  element.innerHTML = content
+  mermaid.init({noteMargin: 10}, element);
 }

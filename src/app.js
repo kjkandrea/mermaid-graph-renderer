@@ -1,16 +1,12 @@
-import mermaid from 'mermaid'
-import { render } from './api/mermaidRenderer.js'
+import { render } from './api/mermaidRenderer'
 
 const main = () => {
   const mermaidElement = document.getElementById('mermaid')
-
-  mermaidElement.innerHTML = `
+  const content = `
     flowchart LR
         1-- 1 ---2
         2-- 1 ---3
-  `.trim()
-
-
-  mermaid.init({noteMargin: 10}, mermaidElement);
+  `
+  render(mermaidElement, content)
 }
 document.addEventListener('DOMContentLoaded', () => main())
