@@ -8,11 +8,11 @@ const main = {
   },
   genMermaidFlowChart(edges) {
     const texts = ['flowchart']
-    for (const vertex1 in edges) {
-      for (const vertex2 in edges[vertex1]) {
+    Object.keys(edges).forEach(vertex1 => {
+      Object.keys(edges[vertex1]).forEach(vertex2 => {
         texts.push(`${vertex1}--${edges[vertex1][vertex2]}-->${vertex2}`)
-      }
-    }
+      })
+    })
     return texts.join('\n')
   },
   render(graph) {
