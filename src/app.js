@@ -3,10 +3,10 @@ import keyPadGraph from './graphs/keyPadGraph'
 
 const main = {
   init(edges) {
-    const mermaidFlowchart = this.parseGraph(edges)
+    const mermaidFlowchart = this.parseFlowChart(edges)
     this.render(mermaidFlowchart)
   },
-  parseGraph(edges) {
+  parseFlowChart(edges) {
     const texts = ['flowchart']
     for (const vertex1 in edges) {
       for (const vertex2 in edges[vertex1]) {
