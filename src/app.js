@@ -8,9 +8,11 @@ const main = {
   },
   madeGraph() {
     const edges = keyPadGraph.edges;
+    let content = 'flowchart'
+    console.log(edges)
     for (const vertex1 in edges) {
       for (const vertex2 in edges[vertex1]) {
-        console.log('vertex2 : %s', vertex2)
+        console.log(`${vertex1}--${edges[vertex1][vertex2]}--${vertex2}`)
       }
     }
 
