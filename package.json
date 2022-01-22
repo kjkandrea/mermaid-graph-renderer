@@ -1,0 +1,17 @@
+{
+  "name": "mermaid-graph-renderer",
+  "version": "1.0.0",
+  "description": "Graph 자료구조 공부용 렌더러",
+  "main": "index.js",
+  "scripts": {
+    "start": "lite-server --baseDir=src"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kjkandrea/mermaid-graph-renderer.git"
+  },
+  "author": "jk kim",
+  "devDependencies": {
+    "lite-server": "^2.6.1"
+  }
+}
