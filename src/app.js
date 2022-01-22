@@ -9,7 +9,7 @@ const main = {
   madeGraph() {
     console.log(keyPadGraph.edges)
 
-    return 'flowchart\n1-- 1 ---2\n2-- 1 ---3\n'
+    return 'flowchart\n1-- 1 -->2\n2-- 1 -->1\n2-- 1 -->3\n3 -- 1 -->2'
   },
   render(graph) {
     const mermaidElement = document.getElementById('mermaid')
