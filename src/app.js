@@ -7,13 +7,14 @@ const main = {
     this.render(mermaidFlowchart)
   },
   genMermaidFlowChart(edges) {
-    const texts = ['flowchart']
-    Object.keys(edges).forEach(vertex1 => {
-      Object.keys(edges[vertex1]).forEach(vertex2 => {
-        texts.push(`${vertex1}--${edges[vertex1][vertex2]}-->${vertex2}`)
-      })
-    })
-    return texts.join('\n')
+    return Object.keys(edges)
+      .reduce((acc, vertex1) => {
+        Object.keys(edges[vertex1]).forEach(vertex2 => {
+          acc.push(`${vertex1}--${edges[vertex1][vertex2]}-->${vertex2}`)
+        })
+        return acc;
+      }, ['flowchart'])
+      .join('\n')
   },
   render(graph) {
     const mermaidElement = document.getElementById('mermaid')
