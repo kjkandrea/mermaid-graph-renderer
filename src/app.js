@@ -2,26 +2,23 @@ import { render } from './api/mermaidRenderer'
 import keyPadGraph from './graphs/keyPadGraph'
 
 const main = {
-  init() {
-    const graph = this.madeGraph()
-    this.render(graph)
+  init(edges) {
+    const mermaidFlowchart = this.parseGraph(edges)
+    this.render(mermaidFlowchart)
   },
-  madeGraph() {
-    const edges = keyPadGraph.edges;
+  parseGraph(edges) {
     let content = 'flowchart'
-    console.log(edges)
     for (const vertex1 in edges) {
       for (const vertex2 in edges[vertex1]) {
-        console.log(`${vertex1}--${edges[vertex1][vertex2]}--${vertex2}`)
+        content += `\n${vertex1}--${edges[vertex1][vertex2]}-->${vertex2}`
       }
     }
 
-
-    return 'flowchart\n1-- 1 -->2\n2-- 1 -->1\n2-- 1 -->3\n3 -- 1 -->2'
+    return content
   },
   render(graph) {
     const mermaidElement = document.getElementById('mermaid')
     render(mermaidElement, graph)
   }
 }
-document.addEventListener('DOMContentLoaded', () => main.init())
+document.addEventListener('DOMContentLoaded', () => main.init(keyPadGraph.edges))
